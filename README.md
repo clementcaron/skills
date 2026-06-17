@@ -12,7 +12,7 @@ These skills are designed for a workflow where the code and architecture stay un
 
 ## Repository structure
 
-The repository is organized by language first, then by workflow phase.
+The repository currently exposes the English workflow, grouped by phase:
 
 ```text
 skills/
@@ -20,13 +20,9 @@ skills/
     planning/
     tasks/
     maintenance/
-  fr/
-    planning/
-    tasks/
-    maintenance/
 ```
 
-The English workflow is the primary documented one:
+Start here:
 
 - [`skills/eng/README.md`](./skills/eng/README.md)
 - [`skills/eng/USAGE.md`](./skills/eng/USAGE.md)
@@ -53,13 +49,36 @@ The engineering workflow is split into three buckets:
 
 For the full day-to-day guidance, read [`skills/eng/USAGE.md`](./skills/eng/USAGE.md).
 
+## Use with `npx skills`
+
+This repository is compatible with the [`skills`](https://github.com/vercel-labs/skills) CLI.
+
+Use `add` to install skills. If you run it without `--skill`, the CLI opens the interactive picker so you can choose exactly which skills to install:
+
+```bash
+npx skills@latest add clementcaron/skills
+npx skills@latest add clementcaron/skills --list
+npx skills@latest add clementcaron/skills --skill grill-with-docs
+```
+
+Use `use` to run one skill without installing it:
+
+```bash
+npx skills@latest use clementcaron/skills --skill grill-with-docs
+```
+
+If you want everything, install all skills from the repo:
+
+```bash
+npx skills@latest add clementcaron/skills --all
+```
+
 ## Artifact policy
 
 This repository uses a strict default:
 
 - **temporary artifacts go to the OS temp directory**
 - **durable artifacts stay small and intentional**
-- **no GitHub / GitLab automation**
 - **no automated commits**
 
 The durable artifacts are usually limited to:
